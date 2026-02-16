@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --background: #F7F7F7;
+  --foreground: #3C3C3C;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+input, textarea {
+  user-select: text;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+main {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+@layer utilities {
+  .bg-gradient-warm {
+    background: linear-gradient(180deg, #FFFBF5 0%, #F7F7F7 100%);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFFBF5 100%);
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #FFC800 0%, #58CC02 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.btn-3d {
+  position: relative;
+  border-bottom: 4px solid;
+  transition: all 0.1s ease;
+  box-shadow: 0 4px 0 0 rgba(0,0,0,0.1);
+}
+
+.btn-3d:active {
+  border-bottom-width: 2px;
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+}
