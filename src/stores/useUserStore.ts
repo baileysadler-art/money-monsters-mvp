@@ -46,7 +46,7 @@ function getDemoState(): UserState {
 
 export const useUserStore = create<UserState & UserActions>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       ...getDemoState(),
 
       addXP: (amount) => set((state) => {

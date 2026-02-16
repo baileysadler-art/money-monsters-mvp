@@ -15,7 +15,6 @@ export default function ProfileScreen() {
   const xp = useUserStore((s) => s.xp);
   const level = useUserStore((s) => s.level);
   const streak = useUserStore((s) => s.streak);
-  const hearts = useUserStore((s) => s.hearts);
   const setName = useUserStore((s) => s.setName);
   const setAvatar = useUserStore((s) => s.setAvatar);
   const resetUserDemo = useUserStore((s) => s.resetToDemo);

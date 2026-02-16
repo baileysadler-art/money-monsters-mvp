@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useUserStore } from '../../stores/useUserStore';
-import { useProgressStore } from '../../stores/useProgressStore';
 import { useHydration } from '../../lib/useHydration';
 import { ACHIEVEMENTS } from '../../data/achievements';
 import ProgressBar from '../ui/ProgressBar';
