@@ -1,9 +1,5 @@
-'use client';
-
-import { use } from 'react';
 import LessonPlayer from '../../../components/lesson/LessonPlayer';
 
-export default function LessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = use(params);
-  return <LessonPlayer lessonId={lessonId} />;
+export default function LessonPage({ params }: { params: { lessonId: string } }) {
+  return <LessonPlayer lessonId={params.lessonId} />;
 }
