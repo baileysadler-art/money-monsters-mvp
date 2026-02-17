@@ -35,34 +35,31 @@ export default function LeaderboardScreen() {
       </div>
 
       {/* Top 3 Podium */}
-      <div className="flex items-end justify-center gap-3 px-5 mb-6">
-        {[1, 0, 2].map((podiumIdx) => {
-          const entry = top3[podiumIdx];
-          if (!entry) return null;
+      <div className="px-5 mb-6">
+        <div className="flex items-end justify-center gap-2 max-w-sm mx-auto">
+          {[1, 0, 2].map((podiumIdx) => {
+            const entry = top3[podiumIdx];
+            if (!entry) return null;
+            const barHeight = [80, 56, 44][podiumIdx];
 
-          return (
-            <motion.div
-              key={entry.rank}
-              initial={{ height: 0 }}
-              animate={{ height: PODIUM_HEIGHTS[podiumIdx] }}
-              transition={{ delay: 0.2 + podiumIdx * 0.15, type: 'spring', stiffness: 200 }}
-              className="flex-1 flex flex-col items-center"
-            >
-              <div className="text-3xl mb-1">{entry.avatar}</div>
-              <p className="text-xs font-bold text-text-primary mb-1 truncate max-w-full">{entry.name}</p>
-              <p className="text-[10px] font-bold text-text-secondary mb-2">⚡ {entry.xp}</p>
-              <div
-                className="w-full rounded-t-xl flex items-start justify-center pt-2"
-                style={{
-                  backgroundColor: PODIUM_COLORS[podiumIdx],
-                  height: PODIUM_HEIGHTS[podiumIdx] - 60,
-                }}
-              >
-                <span className="text-white font-extrabold text-lg">#{entry.rank}</span>
+            return (
+              <div key={entry.rank} className="flex-1 flex flex-col items-center min-w-0">
+                <div className="text-2xl mb-1">{entry.avatar}</div>
+                <p className="text-[11px] font-bold text-text-primary mb-0.5 truncate w-full text-center">{entry.name}</p>
+                <p className="text-[10px] font-bold text-text-secondary mb-1.5">⚡ {entry.xp}</p>
+                <motion.div
+                  initial={{ height: 0 }}
+                  animate={{ height: barHeight }}
+                  transition={{ delay: 0.2 + podiumIdx * 0.15, type: 'spring', stiffness: 200 }}
+                  className="w-full rounded-t-xl flex items-center justify-center overflow-hidden"
+                  style={{ backgroundColor: PODIUM_COLORS[podiumIdx] }}
+                >
+                  <span className="text-white font-extrabold text-lg">#{entry.rank}</span>
+                </motion.div>
               </div>
-            </motion.div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* Remaining entries */}
