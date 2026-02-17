@@ -8,7 +8,7 @@ export const MOCK_LEADERBOARD: LeaderboardEntry[] = [
   { rank: 5, name: 'BudgetBeast', avatar: '🤖', xp: 1350 },
   { rank: 6, name: 'GoldGhost', avatar: '👻', xp: 1200 },
   { rank: 7, name: 'PennyPaws', avatar: '🐾', xp: 980 },
-  { rank: 8, name: 'Sophie', avatar: '🐲', xp: 245, isUser: true },
+  { rank: 8, name: 'Bailey', avatar: '🐲', xp: 245, isUser: true },
   { rank: 9, name: 'MoneyOwl', avatar: '🦉', xp: 220 },
   { rank: 10, name: 'VaultBot', avatar: '🤖', xp: 190 },
   { rank: 11, name: 'ProfitPanda', avatar: '🐼', xp: 165 },

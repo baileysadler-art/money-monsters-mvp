@@ -30,7 +30,7 @@ interface UserActions {
 
 function getDemoState(): UserState {
   return {
-    profile: { name: 'Sophie', avatar: '🐲', createdAt: getTodayStr() },
+    profile: { name: 'Bailey', avatar: '🐲', createdAt: getTodayStr() },
     xp: 245,
     level: 3,
     streak: 5,
