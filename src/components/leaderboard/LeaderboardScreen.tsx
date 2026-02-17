@@ -6,7 +6,6 @@ import { useUserStore } from '../../stores/useUserStore';
 import { MOCK_LEADERBOARD } from '../../data/leaderboard';
 
 const PODIUM_COLORS = ['#FFC800', '#C0C0C0', '#CD7F32'];
-const PODIUM_HEIGHTS = [120, 96, 80];
 
 export default function LeaderboardScreen() {
   const hydrated = useHydration();
