@@ -35,26 +35,27 @@ export default function LeaderboardScreen() {
       </div>
 
       {/* Top 3 Podium */}
-      <div className="px-5 mb-6">
-        <div className="flex items-end justify-center gap-2 max-w-sm mx-auto">
+      <div className="flex justify-center px-5 mb-6">
+        <div className="flex items-end gap-3" style={{ width: '320px' }}>
           {[1, 0, 2].map((podiumIdx) => {
             const entry = top3[podiumIdx];
             if (!entry) return null;
-            const barHeight = [80, 56, 44][podiumIdx];
+            const barHeight = [72, 48, 36][podiumIdx];
+            const isFirst = podiumIdx === 0;
 
             return (
-              <div key={entry.rank} className="flex-1 flex flex-col items-center min-w-0">
-                <div className="text-2xl mb-1">{entry.avatar}</div>
-                <p className="text-[11px] font-bold text-text-primary mb-0.5 truncate w-full text-center">{entry.name}</p>
+              <div key={entry.rank} style={{ width: isFirst ? '120px' : '90px' }} className="flex flex-col items-center">
+                <div className={`${isFirst ? 'text-3xl' : 'text-2xl'} mb-1`}>{entry.avatar}</div>
+                <p className="text-[11px] font-bold text-text-primary mb-0.5 text-center leading-tight">{entry.name}</p>
                 <p className="text-[10px] font-bold text-text-secondary mb-1.5">⚡ {entry.xp}</p>
                 <motion.div
                   initial={{ height: 0 }}
                   animate={{ height: barHeight }}
                   transition={{ delay: 0.2 + podiumIdx * 0.15, type: 'spring', stiffness: 200 }}
-                  className="w-full rounded-t-xl flex items-center justify-center overflow-hidden"
+                  className="w-full rounded-t-xl flex items-center justify-center"
                   style={{ backgroundColor: PODIUM_COLORS[podiumIdx] }}
                 >
-                  <span className="text-white font-extrabold text-lg">#{entry.rank}</span>
+                  <span className="text-white font-extrabold text-base">#{entry.rank}</span>
                 </motion.div>
               </div>
             );
